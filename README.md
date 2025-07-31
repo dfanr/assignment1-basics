@@ -97,8 +97,30 @@ cd ..
   - tests/adapters.py::run_linear()
 
 #### 3.2.2 Problem (embedding): Implement the embedding module (1 point)
+
+- 测试命令： `uv run pytest -k test_embedding`
+- 相关代码：
+  - cs336_basics/custom_layers/embedding.py
+  - tests/adapters.py::run_embedding()
+
 #### 3.2.3 Problem (rmsnorm): Root Mean Square Layer Normalization (1 point)
+
+- 测试命令： `uv run pytest -k test_rmsnorm`
+- 相关代码：
+  - cs336_basics/custom_layers/rms_norm.py
+  - tests/adapters.py::run_rmsnorm()
+
 #### 3.2.4 Problem (positionwise_feedforward): Implement the position-wise feed-forward network (2 points)
+
+- 测试命令： 
+  - `uv run pytest -k test_swiglu`
+  - `uv run pytest -k test_silu`
+- 相关代码：
+  - cs336_basics/custom_layers/feed_forward.py
+  - cs336_basics/custom_layers/silu.py
+  - tests/adapters.py::run_swiglu()
+  - tests/adapters.py::run_silu()
+
 #### 3.2.5 Problem (rope): Implement RoPE (2 points)
 #### 3.2.6 Problem (softmax): Implement softmax (1 point)
 #### 3.2.7 Problem (scaled_dot_product_attention): Implement scaled dot-product attention (5 points)

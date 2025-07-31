@@ -53,8 +53,11 @@ def run_embedding(
     Returns:
         Float[Tensor, "... d_model"]: Batch of embeddings returned by your Embedding layer.
     """
+    from cs336_basics.custom_laysers.embedding import CustomEmbedding
 
-    raise NotImplementedError
+    embedding = CustomEmbedding(vocab_size, d_model)
+    embedding.load_state_dict({'weight': weights})
+    return embedding(token_ids)
 
 
 def run_swiglu(
@@ -86,7 +89,14 @@ def run_swiglu(
     # swiglu.w1.weight.data = w1_weight
     # swiglu.w2.weight.data = w2_weight
     # swiglu.w3.weight.data = w3_weight
-    raise NotImplementedError
+    from cs336_basics.custom_laysers.feed_forward import SwiGLUFeedForward
+
+    ff = SwiGLUFeedForward(d_model, d_ff)
+    ff.linear_1.weight.data = w1_weight
+    ff.linear_gate.weight.data = w3_weight
+    ff.linear_2.weight.data = w2_weight
+
+    return ff(in_features)
 
 
 def run_scaled_dot_product_attention(
@@ -381,7 +391,11 @@ def run_rmsnorm(
         Float[Tensor,"... d_model"]: Tensor of with the same shape as `in_features` with the output of running
         RMSNorm of the `in_features`.
     """
-    raise NotImplementedError
+    from cs336_basics.custom_laysers.rms_norm import CustomRMSNorm
+
+    rmsnorm = CustomRMSNorm(d_model, eps)
+    rmsnorm.load_state_dict({"g": weights})
+    return rmsnorm(in_features)
 
 
 def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:
@@ -395,7 +409,9 @@ def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:
         Float[Tensor,"..."]: of with the same shape as `in_features` with the output of applying
         SiLU to each element.
     """
-    raise NotImplementedError
+    from cs336_basics.custom_laysers.silu import SiLU
+
+    return SiLU()(in_features)
 
 
 def run_get_batch(
