@@ -90,6 +90,12 @@ cd ..
 
 ### 3.2 Transformer Language Model Architecture
 #### 3.2.1 Problem (linear): Implementing the linear module (1 point)
+
+- 测试命令：`uv run pytest -k test_linear`
+- 相关代码：
+  - cs336_basics/custom_layers/linear.py
+  - tests/adapters.py::run_linear()
+
 #### 3.2.2 Problem (embedding): Implement the embedding module (1 point)
 #### 3.2.3 Problem (rmsnorm): Root Mean Square Layer Normalization (1 point)
 #### 3.2.4 Problem (positionwise_feedforward): Implement the position-wise feed-forward network (2 points)
