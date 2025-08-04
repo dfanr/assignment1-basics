@@ -122,41 +122,58 @@ cd ..
   - tests/adapters.py::run_silu()
 
 #### 3.2.5 Problem (rope): Implement RoPE (2 points)
+
+- 测试命令： `uv run pytest -k test_rope`
+- 相关代码：
+  - cs336_basics/custom_layers/rope.py
+  - tests/adapters.py::run_rope()
+- 亮点：用复数乘法实现旋转操作
+
+
 #### 3.2.6 Problem (softmax): Implement softmax (1 point)
+
+- 测试命令： `uv run pytest -k test_softmax_matches_pytorch`
+- 相关代码：
+  - cs336_basics/custom_layers/softmax.py
+  - tests/adapters.py::run_softmax()
+
 #### 3.2.7 Problem (scaled_dot_product_attention): Implement scaled dot-product attention (5 points)
 #### 3.2.8 Problem (multihead_self_attention): Implement causal multi-head self-attention (5 points)
 #### 3.2.9 Problem (transformer_block): Implement the Transformer block (3 points)
 #### 3.2.10 Problem (transformer_lm): Implementing the Transformer LM (3 points)
 #### 3.2.11 Problem (transformer_accounting): Transformer LM resource accounting (5 points)
-#### 3.2.12 Problem (cross_entropy): Implement Cross entropy
-#### 3.2.13 Problem (learning_rate_tuning): Tuning the learning rate (1 point)
-#### 3.2.14 Problem (adamw): Implement AdamW (2 points)
-#### 3.2.15 Problem (adamwAccounting): Resource accounting for training with AdamW (2 points)
-#### 3.2.16 Problem (learning_rate_schedule): Implement cosine learning rate schedule with warmup
-#### 3.2.17 Problem (gradient_clipping): Implement gradient clipping (1 point)
 
 
-### 3.3 Training loop
-#### 3.3.1 Problem (data_loading): Implement data loading (2 points)
-#### 3.3.2 Problem (checkpointing): Implement model checkpointing (1 point)
-#### 3.3.3 Problem (training_together): Put it together (4 points)
+### 3.3 Training a Transformer LM
+#### 3.3.1 Problem (cross_entropy): Implement Cross entropy
+#### 3.3.2 Problem (learning_rate_tuning): Tuning the learning rate (1 point)
+#### 3.3.3 Problem (adamw): Implement AdamW (2 points)
+#### 3.3.4 Problem (adamwAccounting): Resource accounting for training with AdamW (2 points)
+#### 3.3.5 Problem (learning_rate_schedule): Implement cosine learning rate schedule with warmup
+#### 3.3.6 Problem (gradient_clipping): Implement gradient clipping (1 point)
 
 
-### 3.4 Generating text
-#### 3.4.1 Problem (decoding): Decoding (3 points)
+### 3.4 Training loop
+#### 3.4.1 Problem (data_loading): Implement data loading (2 points)
+#### 3.4.2 Problem (checkpointing): Implement model checkpointing (1 point)
+#### 3.4.3 Problem (training_together): Put it together (4 points)
 
 
-### 3.5 Experiments
-#### 3.5.1 Problem (experiment_log): Experiment logging (3 points)
-#### 3.5.2 Problem (learning_rate): Tune the learning rate (3 points) (4 H100 hrs)
-#### 3.5.3 Problem (batch_size_experiment): Batch size variations (1 point) (2 H100 hrs)
-#### 3.5.4 Problem (generate): Generate text (1 point)
-#### 3.5.5 Problem (layer_norm_ablation): Remove RMSNorm and train (1 point) (1 H100 hr)
-#### 3.5.6 Problem (pre_norm_ablation): Implement post-norm and train (1 point) (1 H100 hr)
-#### 3.5.7 Problem (no_pos_emb): Implement NoPE (1 point) (1 H100 hr)
-#### 3.5.8 Problem (swiglu_ablation): SwiGLU vs. SiLU (1 point) (1 H100 hr)
-#### 3.5.9 Problem (main_experiment): Experiment on OWT (2 points) (3 H100 hrs)
-#### 3.5.10 Problem (leaderboard): Leaderboard (6 points) (10 H100 hrs)
+### 3.5 Generating text
+#### 3.5.1 Problem (decoding): Decoding (3 points)
+
+
+### 3.6 Experiments
+#### 3.6.1 Problem (experiment_log): Experiment logging (3 points)
+#### 3.6.2 Problem (learning_rate): Tune the learning rate (3 points) (4 H100 hrs)
+#### 3.6.3 Problem (batch_size_experiment): Batch size variations (1 point) (2 H100 hrs)
+#### 3.6.4 Problem (generate): Generate text (1 point)
+#### 3.6.5 Problem (layer_norm_ablation): Remove RMSNorm and train (1 point) (1 H100 hr)
+#### 3.6.6 Problem (pre_norm_ablation): Implement post-norm and train (1 point) (1 H100 hr)
+#### 3.6.7 Problem (no_pos_emb): Implement NoPE (1 point) (1 H100 hr)
+#### 3.6.8 Problem (swiglu_ablation): SwiGLU vs. SiLU (1 point) (1 H100 hr)
+#### 3.6.9 Problem (main_experiment): Experiment on OWT (2 points) (3 H100 hrs)
+#### 3.6.10 Problem (leaderboard): Leaderboard (6 points) (10 H100 hrs)
 
 
 
